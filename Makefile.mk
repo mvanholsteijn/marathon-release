@@ -31,7 +31,7 @@ SHELL=/bin/bash
 build: pre-build docker-build post-build
 
 pre-build:
-
+	tox
 
 post-build:
 

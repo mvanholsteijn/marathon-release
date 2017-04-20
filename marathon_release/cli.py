@@ -158,7 +158,6 @@ class MarathonDeployer:
 
         return app
 
-
     def load_all_app_definitions(self, directory=os.path.join('.', 'apps')):
         """
         load all files with the suffix `.json` from the `directory` as application definition.
