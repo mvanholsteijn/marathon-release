@@ -1,0 +1,147 @@
+{
+  "app": {
+    "id": "/shellinabox",
+    "cmd": null,
+    "args": null,
+    "user": null,
+    "env": {
+      "SIAB_SSL": "false",
+      "SIAB_PASSWORD": "secret"
+    },
+    "instances": 1,
+    "cpus": 0.25,
+    "mem": 128,
+    "disk": 0,
+    "executor": "",
+    "constraints": [],
+    "uris": [],
+    "fetch": [],
+    "storeUrls": [],
+    "ports": [
+      10059
+    ],
+    "portDefinitions": [
+      {
+        "port": 10059,
+        "protocol": "tcp",
+        "labels": {}
+      }
+    ],
+    "requirePorts": false,
+    "backoffSeconds": 1,
+    "backoffFactor": 1.15,
+    "maxLaunchDelaySeconds": 3600,
+    "container": {
+      "type": "DOCKER",
+      "volumes": [
+        {
+          "containerPath": "/dev/log",
+          "hostPath": "/dev/log",
+          "mode": "RW"
+        }
+      ],
+      "docker": {
+        "image": "shellinabox:0.2.7",
+        "network": "BRIDGE",
+        "portMappings": [
+          {
+            "containerPort": 4200,
+            "hostPort": 0,
+            "servicePort": 10059,
+            "protocol": "tcp",
+            "labels": {}
+          }
+        ],
+        "privileged": false,
+        "parameters": [
+          {
+            "key": "log-driver",
+            "value": "fluentd"
+          },
+          {
+            "key": "log-opt",
+            "value": "tag=docker.shellinabox"
+          },
+          {
+            "key": "rm",
+            "value": "true"
+          }
+        ],
+        "forcePullImage": true
+      }
+    },
+    "healthChecks": [
+      {
+        "path": "/",
+        "protocol": "HTTP",
+        "portIndex": 0,
+        "gracePeriodSeconds": 60,
+        "intervalSeconds": 60,
+        "timeoutSeconds": 10,
+        "maxConsecutiveFailures": 3,
+        "ignoreHttp1xx": false
+      }
+    ],
+    "readinessChecks": [],
+    "dependencies": [],
+    "upgradeStrategy": {
+      "minimumHealthCapacity": 1,
+      "maximumOverCapacity": 1
+    },
+    "labels": {},
+    "acceptedResourceRoles": null,
+    "ipAddress": null,
+    "version": "2017-04-20T09:38:31.558Z",
+    "residency": null,
+    "versionInfo": {
+      "lastScalingAt": "2017-04-20T09:38:31.558Z",
+      "lastConfigChangeAt": "2017-04-20T09:38:31.558Z"
+    },
+    "tasksStaged": 0,
+    "tasksRunning": 1,
+    "tasksHealthy": 1,
+    "tasksUnhealthy": 0,
+    "deployments": [],
+    "tasks": [
+      {
+        "id": "shellinabox.1dbbb491-25ad-11e7-9bdc-0242ac110004",
+        "slaveId": "5962b335-5f18-48a2-a18e-eb57a4bf9b4c-S6",
+        "host": "ip-10-202-5-96.eu-west-1.compute.internal",
+        "startedAt": "2017-04-20T09:38:48.693Z",
+        "stagedAt": "2017-04-20T09:38:31.650Z",
+        "ports": [
+          52795
+        ],
+        "version": "2017-04-20T09:38:31.558Z",
+        "ipAddresses": [
+          {
+            "ipAddress": "172.17.0.15",
+            "protocol": "IPv4"
+          }
+        ],
+        "appId": "/shellinabox",
+        "healthCheckResults": [
+          {
+            "alive": true,
+            "consecutiveFailures": 0,
+            "firstSuccess": "2017-04-20T09:39:31.671Z",
+            "lastFailure": null,
+            "lastSuccess": "2017-04-20T11:57:34.358Z",
+            "lastFailureCause": null,
+            "taskId": "shellinabox.1dbbb491-25ad-11e7-9bdc-0242ac110004"
+          }
+        ]
+      }
+    ],
+    "lastTaskFailure": {
+      "appId": "/shellinabox",
+      "host": "ip-10-202-5-84.eu-west-1.compute.internal",
+      "message": "Slave ip-10-202-5-84.eu-west-1.compute.internal removed: health check timed out",
+      "state": "TASK_LOST",
+      "taskId": "shellinabox.3599c416-184c-11e7-9bdc-0242ac110004",
+      "timestamp": "2017-04-16T04:42:50.184Z",
+      "version": "2017-03-01T13:29:05.844Z",
+      "slaveId": "5962b335-5f18-48a2-a18e-eb57a4bf9b4c-S2"
+    }
+  }
+}
