@@ -101,7 +101,6 @@ tag: check-status
 	@. $(RELEASE_SUPPORT) ; setRelease $(VERSION)
 	make on-tag VERSION=$(VERSION)
 	git add .
-	exit 1
 	git commit -m "bumped to version $(VERSION)" ;
 	git tag $(TAG) ;
 	@[ -n "$(shell git remote -v)" ] && git push --tags
