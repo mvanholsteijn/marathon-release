@@ -7,9 +7,9 @@ dependencies = [ 'click==6.7', 'configparser==3.5.0', 'Jinja2==2.9.6', 'jsondiff
 
 setup(
     name='marathonrelease',
-    version='0.0.0-b132063-dirty',
+    version='0.0.1',
     url='https://github.com/mvanholsteijn/marathon-release',
-    license='BSD',
+    license='Apache',
     author='Mark van Holsteijn',
     author_email='mvanholsteijn@xebia.com',
     description=' marathon-release allows you to manage multiple Marathon application definitions as a single release.',

@@ -20,12 +20,20 @@ marathon-release is a just a tiny bit of glue code between the Python:
 
 # Installation
 
-First install pipsi by following the [Pipsi installation instructions](https://github.com/mitsuhiko/pipsi#readme), then type:
+If you want to install the utility natively, install [Pipsi](https://github.com/mitsuhiko/pipsi#readme), then type:
 
 ```
 git clone https://github.com/mvanholsteijn/marathon-release 
 pipsi install marathon-release
 ```
+
+# Docker
+If you want to run using the Docker image, just create an alias:
+
+```
+alias marathon-release='docker run -v $PWD:/release mvanholsteijn/marathon-release:latest'
+```
+
 
 
 ## directory layout
