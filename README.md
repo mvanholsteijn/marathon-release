@@ -112,25 +112,10 @@ As the application definition file is a  [Jinja](http://jinja.pocoo.org/) you ma
    }
 }
 ```
-### Running marathon-release
-In order to run marathon-release, you install the dependencies locally:
-
-```
-virtualenv venv
-. ./venv/bin/activate
-pip install -r requirements.txt
-export PATH=$PATH:$PWD
-
-```
-
-or use the docker container:
-```
-docker run --net host -v <your-release-directory>:/release mvanholsteijn/marathon-release:latest 
-```
 
 
 ### Diffing a release
-to determine what is going to happen, you can use the diff command:
+To determine what is going to happen, you can use the diff command:
 
 ```
 $ marathon-release diff --domain-name dev 
