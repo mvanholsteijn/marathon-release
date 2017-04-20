@@ -7,7 +7,7 @@ dependencies = [ 'click==6.7', 'configparser==3.5.0', 'Jinja2==2.9.6', 'jsondiff
 
 setup(
     name='marathonrelease',
-    version='0.9.0',
+    version='0.0.0-b132063-dirty',
     url='https://github.com/mvanholsteijn/marathon-release',
     license='BSD',
     author='Mark van Holsteijn',
@@ -21,28 +21,20 @@ setup(
     install_requires=dependencies,
     entry_points={
         'console_scripts': [
-            'marathon-release = marathon_release.cli:main',
+            'marathon-release = marathon_release.cli:cli',
         ],
     },
     classifiers=[
         # As from http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        # 'Development Status :: 1 - Planning',
-        # 'Development Status :: 2 - Pre-Alpha',
-        # 'Development Status :: 3 - Alpha',
         'Development Status :: 4 - Beta',
-        # 'Development Status :: 5 - Production/Stable',
-        # 'Development Status :: 6 - Mature',
-        # 'Development Status :: 7 - Inactive',
         'Environment :: Console',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: Apache Software License',
         'Operating System :: POSIX',
         'Operating System :: MacOS',
         'Operating System :: Unix',
-        # 'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
-        #'Programming Language :: Python :: 3',
-        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Utilities',
     ]
 )
