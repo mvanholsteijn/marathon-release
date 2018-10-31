@@ -3,7 +3,7 @@
 """
 from setuptools import find_packages, setup
 
-dependencies = [ 'click==6.7', 'configparser==3.5.0', 'Jinja2==2.9.6', 'jsondiff==1.1.1', 'requests==2.13.0']
+dependencies = [ 'click==6.7', 'configparser==3.5.0', 'Jinja2==2.9.6', 'jsondiff==1.1.1', 'requests>=2.20.0']
 
 setup(
     name='marathonrelease',
